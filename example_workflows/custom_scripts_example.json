@@ -1,0 +1,1234 @@
+{
+  "id": "12201b7d-bc10-49e3-891a-e500faa77ec6",
+  "revision": 0,
+  "last_node_id": 26,
+  "last_link_id": 40,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "LoraLoader|pysssss",
+      "pos": [
+        -63.172293688433626,
+        -495.18181912551273
+      ],
+      "size": [
+        300,
+        170
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "name": "prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            11,
+            12
+          ]
+        },
+        {
+          "name": "example",
+          "type": "STRING",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader|pysssss"
+      },
+      "widgets_values": [
+        "JuggerCineXL2.safetensors",
+        1,
+        1,
+        "",
+        "[none]"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 18,
+      "type": "CLIPTextEncode",
+      "pos": [
+        732.7018103971653,
+        -459.7522012654723
+      ],
+      "size": [
+        405.0923156738281,
+        124.19273376464844
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 11
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33"
+      },
+      "widgets_values": [
+        "evening sunset scenery blue sky nature, glass bottle with a galaxy in it"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 13,
+      "type": "SaveText|pysssss",
+      "pos": [
+        -879.4921514857808,
+        -383.0110962051881
+      ],
+      "size": [
+        300,
+        200
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveText|pysssss"
+      },
+      "widgets_values": [
+        "output",
+        "pyisoalte_test.txt",
+        "overwrite",
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 15,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1152.5063329664515,
+        104.32256613657869
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 7
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncode",
+      "pos": [
+        809.1631962125948,
+        -249.82222261709546
+      ],
+      "size": [
+        397.553466796875,
+        142.57814025878906
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 12
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoader|pysssss",
+      "pos": [
+        -498.4315592605644,
+        -481.3508267070006
+      ],
+      "size": [
+        300,
+        150
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            23
+          ]
+        },
+        {
+          "name": "example",
+          "type": "STRING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoader|pysssss"
+      },
+      "widgets_values": [
+        "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
+        "",
+        "[none]"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 17,
+      "type": "KSampler",
+      "pos": [
+        1367.1973718412555,
+        -475.21877083334266
+      ],
+      "size": [
+        270,
+        262
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 10
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 19
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 21
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        710877466883943,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "simple",
+        1
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 5,
+      "type": "MathExpression|pysssss",
+      "pos": [
+        498.0624582974185,
+        210.33925162217434
+      ],
+      "size": [
+        300,
+        150
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "shape": 7,
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": 3
+        },
+        {
+          "name": "b",
+          "shape": 7,
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": 4
+        },
+        {
+          "name": "c",
+          "shape": 7,
+          "type": "INT,FLOAT,IMAGE,LATENT",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "a + b + (2 * c)"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 14,
+      "type": "PrimitiveInt",
+      "pos": [
+        85.37194296645225,
+        256.6045643229188
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        256,
+        "fixed"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 10,
+      "type": "StringFunction|pysssss",
+      "pos": [
+        368.52984724381776,
+        -211.61984316445157
+      ],
+      "size": [
+        235.59570354614266,
+        298.00000000000006
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text_b"
+          },
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringFunction|pysssss"
+      },
+      "widgets_values": [
+        "replace",
+        "no",
+        "text, watermark, ugly, wrong, bad",
+        "",
+        "",
+        [
+          "text, watermark, ugly, wrong, bad"
+        ]
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 23,
+      "type": "VAEDecode",
+      "pos": [
+        1728.9420888146874,
+        -455.85327998045443
+      ],
+      "size": [
+        200,
+        50
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 24
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33"
+      },
+      "widgets_values": [],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 3,
+      "type": "ConstrainImage|pysssss",
+      "pos": [
+        1751.094592493994,
+        -145.44657949004184
+      ],
+      "size": [
+        300,
+        200
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConstrainImage|pysssss"
+      },
+      "widgets_values": [
+        768,
+        1024,
+        0,
+        1024,
+        "no"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 26,
+      "type": "SaveImage",
+      "pos": [
+        2513.1845708222313,
+        -195.70510385545734
+      ],
+      "size": [
+        565.77001953125,
+        596.3800048828125
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 40
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 6,
+      "type": "PlaySound|pysssss",
+      "pos": [
+        2114.1992431297813,
+        -119.9273167080487
+      ],
+      "size": [
+        300,
+        150
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "shape": 6,
+          "type": "*",
+          "links": [
+            34,
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlaySound|pysssss"
+      },
+      "widgets_values": [
+        "always",
+        0,
+        "notify.mp3"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 7,
+      "type": "Repeater|pysssss",
+      "pos": [
+        2800.330407667226,
+        -601.4488393800848
+      ],
+      "size": [
+        300,
+        306
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "shape": 6,
+          "type": "*",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Repeater|pysssss"
+      },
+      "widgets_values": [
+        2,
+        "single",
+        "reuse"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 11,
+      "type": "SystemNotification|pysssss",
+      "pos": [
+        2454.4635417398304,
+        -559.0800151268439
+      ],
+      "size": [
+        300,
+        150
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "shape": 6,
+          "type": "*",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SystemNotification|pysssss"
+      },
+      "widgets_values": [
+        "test",
+        "always"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 4,
+      "type": "ConstrainImageforVideo|pysssss",
+      "pos": [
+        3188.119093949125,
+        -608.5917295454266
+      ],
+      "size": [
+        300,
+        200
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConstrainImageforVideo|pysssss"
+      },
+      "widgets_values": [
+        1024,
+        768,
+        1024,
+        768,
+        "no"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 24,
+      "type": "SaveImage",
+      "pos": [
+        3670.3528370672666,
+        -590.861433003879
+      ],
+      "size": [
+        565.77001953125,
+        596.3800048828125
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.33"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 21,
+      "type": "PrimitiveString",
+      "pos": [
+        -1262.0569507331063,
+        -378.3076233227773
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "A central, glowing platinum processor core labeled \"ComfyUI\" sits in the center. Surrounding it are independent, floating glass containment modules"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 9,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -108.3648667449378,
+        -219.2403079851401
+      ],
+      "size": [
+        300,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            27,
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "A central, glowing platinum processor core labeled \"ComfyUI\" sits in the center. Surrounding it are independent, floating glass containment modules"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 8,
+      "type": "ReroutePrimitive|pysssss",
+      "pos": [
+        874.0688178511086,
+        259.1224427401968
+      ],
+      "size": [
+        200,
+        100
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": " ",
+          "name": "value",
+          "type": "*",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "label": "INT",
+          "name": "*",
+          "type": "*",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReroutePrimitive|pysssss"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      1,
+      2,
+      1,
+      "CLIP"
+    ],
+    [
+      3,
+      14,
+      0,
+      5,
+      0,
+      "INT"
+    ],
+    [
+      4,
+      14,
+      0,
+      5,
+      1,
+      "INT"
+    ],
+    [
+      5,
+      14,
+      0,
+      5,
+      2,
+      "INT"
+    ],
+    [
+      6,
+      5,
+      0,
+      8,
+      0,
+      "INT"
+    ],
+    [
+      7,
+      5,
+      0,
+      15,
+      0,
+      "INT"
+    ],
+    [
+      9,
+      8,
+      0,
+      15,
+      1,
+      "INT"
+    ],
+    [
+      10,
+      2,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      11,
+      2,
+      1,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      12,
+      2,
+      1,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      13,
+      21,
+      0,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      14,
+      13,
+      0,
+      1,
+      0,
+      "STRING"
+    ],
+    [
+      15,
+      1,
+      3,
+      2,
+      2,
+      "STRING"
+    ],
+    [
+      17,
+      2,
+      2,
+      9,
+      0,
+      "STRING"
+    ],
+    [
+      19,
+      18,
+      0,
+      17,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      20,
+      15,
+      0,
+      17,
+      3,
+      "LATENT"
+    ],
+    [
+      21,
+      19,
+      0,
+      17,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      23,
+      1,
+      2,
+      23,
+      1,
+      "VAE"
+    ],
+    [
+      24,
+      17,
+      0,
+      23,
+      0,
+      "LATENT"
+    ],
+    [
+      27,
+      9,
+      0,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      28,
+      10,
+      0,
+      19,
+      1,
+      "STRING"
+    ],
+    [
+      30,
+      9,
+      0,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      34,
+      6,
+      0,
+      11,
+      0,
+      "*"
+    ],
+    [
+      35,
+      11,
+      0,
+      7,
+      0,
+      "*"
+    ],
+    [
+      36,
+      7,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      23,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      3,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      39,
+      4,
+      0,
+      24,
+      0,
+      "IMAGE"
+    ],
+    [
+      40,
+      6,
+      0,
+      26,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6209213230591554,
+      "offset": [
+        478.65455810683846,
+        952.0643229945296
+      ]
+    },
+    "frontendVersion": "1.42.8"
+  },
+  "version": 0.4
+}

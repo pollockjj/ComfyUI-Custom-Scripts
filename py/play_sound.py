@@ -26,7 +26,8 @@ class PlaySound:
 
     CATEGORY = "utils"
 
-    def IS_CHANGED(self, **kwargs):
+    @classmethod
+    def IS_CHANGED(cls, **kwargs):
         return float("NaN")
 
     def nop(self, any, mode, volume, file):

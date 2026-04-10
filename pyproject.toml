@@ -11,3 +11,7 @@ Repository = "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
 PublisherId = "pythongosssss"
 DisplayName = "ComfyUI-Custom-Scripts"
 Icon = ""
+
+[tool.comfy.isolation]
+can_isolate = true
+share_torch = true
